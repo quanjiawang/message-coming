@@ -1,0 +1,20 @@
+<!--pages/game/newRecord/newRecord.wxml-->
+<view class='mainContainer'>
+  <view class='flex'>
+    <view class='flex-1'>您在本局游戏坚持了</view>
+    <view class=' share'></view>
+  </view>
+  <view class='timeLine'><text class='gameTime'>60</text>分钟</view>
+  <view class='threeLine'>恭喜，这是一个新纪录</view>
+  <view class='line'></view>
+  <!-- <view class='gameTips'>没有解锁新成就</view> -->
+  <view class='gameTips'>解锁新成就</view>
+  <scroll-view  scroll-x="true">
+  <view class='flex srcollCon'>
+  <view class='moreGame'></view>
+  <view class='moreGame'></view>
+  <view class='moreGame'></view>
+  </view>
+  </scroll-view>
+</view>
+<view class='backBtn' bindtap='goBackBtn'>返回首页</view>

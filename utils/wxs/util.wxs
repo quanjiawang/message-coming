@@ -1,0 +1,234 @@
+var convertQiNiuImage = function(data, isArray, index) {
+  var url;
+  if (isArray) {
+    if (data.length > index) {
+      url = data[index];
+    } else {
+      url = "";
+    }
+  } else {
+    url = data;
+  }
+  if (url.indexOf("wx.qlogo.cn") > 0) {
+    return url ? url : "nopic";
+  } else if (url.indexOf("dn-bicaijia-img") > 0 || url.indexOf("img1.bicaijia.com") > 0) {
+    return url + "?imageView2/1/w/200/h/200";
+  } else {
+    return url ? url : "nopic";
+  }
+}
+
+var convertAmount = function(amount) {
+  var amt = ""
+  if (amount != "") {
+    amt = (amount / 100).toFixed(2)
+  } else if (amount === 0) {
+    amt = 0
+  }
+  return amt;
+}
+
+//分转成万
+var convertSixAmountZero = function(amount) {
+  var amt = "0.00";
+  if (amount != "") {
+    amt = (amount / 1000000).toFixed(2)
+  } else {
+    amt = 0
+  }
+  return amt;
+}
+// 值为空，就显示为空
+var convertAmountNull = function(amount) {
+  var amt = "";
+  // if (amount != "" || amount === 0) {
+  //   amt = (amount / 100).toFixed(2)
+  // }
+  if (amount != "") {
+    amt = (amount / 100).toFixed(2)
+  } else if (amount === 0) {
+    amt = 0
+  }
+  return amt;
+}
+var exceed = function(text) {
+  var reg = getRegExp('/^[\u4e00-\u9fa5]+$/')
+
+  if (reg.test(text)) {
+    return true
+  }
+}
+var convertQiNiuVideo = function(data, pixel) {
+  var url = data;
+  if (typeof(url) == 'undefined') {
+    return "";
+  }
+  if (!pixel) {
+    pixel = 200;
+  }
+  if (url.indexOf("dn-bicaijia-img") > 0 || url.indexOf("img1.bicaijia.com") > 0) {
+    return url + "?vframe/png/offset/1/w/" + pixel + "/h/" + pixel;
+  } else {
+    return url;
+  }
+}
+//隐藏名字，只显示第一个字
+var hideText = function(text) {
+  if (text) {
+    if (text.length >= 1) {
+      var newRes = text[0];
+      var length = text.length;
+      for (var i = 1; i < text.length; i++) {
+        newRes += "*";
+      }
+      return newRes;
+    } else {
+      return text;
+    }
+  } else {
+    return "";
+  }
+}
+
+//查询数组是否包含
+var isContains = function(arr, a) {
+  var res = false;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === a) {
+      res = true;
+      break;
+    }
+  }
+  return res;
+}
+// 截取时间
+var showNoTime = function(str) {
+  return str.slice(0, 11)
+}
+// 分割/
+var clipWholeData = function(data) {
+  return data.split("/")
+}
+
+// 根据指定值找对应含义
+var convertStrById = function(id, idKey, nameKey, list) {
+  for (var i = 0; i < list.length; i++) {
+    if (list[i]["" + idKey + ""] == id) {
+      return list[i]["" + nameKey + ""]
+    }
+  }
+  return "";
+}
+
+//图片字符串制定符号分割转数组
+var convertPicStrToArr = function(picStr, sign = ",") {
+  return picStr.split(sign);
+}
+// 字符串转数组并只显示前两项
+var showTwoItems = function(operateStr, sign = ",") {
+  if (operateStr) {
+    return operateStr.split(sign).slice(0, 2).join("、")
+  }
+}
+// 字符串转数组并只显示前五项
+var showFiveItems = function(operateStr, sign = ",") {
+  if (operateStr) {
+    return operateStr.split(sign).slice(0, 5)
+  }
+}
+// 合作案例截取前80个字符
+var articleSlice = function(str) {
+  return str.slice(0, 80)
+}
+// 商机展示10个字
+var showTenCharacters = function(str) {
+  return str.slice(0, 10)
+}
+// 金额三位逗号
+function convertStandardAmount(amount) {
+  var amt, result = "" //转化后金额
+  if (amount == 0 || amount) {
+    amt = (amount / 100).toFixed(2)
+    var index = amt.indexOf('.');
+    var num = amt.substring(0, index); //拿出小数点前述
+    var deci = amt.substring(index, amt.length);
+    num = (num || 0).toString();
+    while (num.length > 3) {
+      result = ',' + num.slice(-3) + result;
+      num = num.slice(0, num.length - 3);
+    }
+    if (num) {
+      result = num + result;
+    }
+    result = result + deci;
+  }
+
+  return result;
+}
+// 判断是视频还是图片
+var isThisImage = function(str) {
+  var imageArr = ['.png', '.jpg', '.jpeg', '.PNG', '.JPG', '.JPEG', '.bmp', '.GIF', '.gif', '.BMP']
+  for (var i = 0; i < imageArr.length; i++) {
+    if (str.indexOf(imageArr[i]) > -1) {
+      return true
+    }
+  }
+}
+
+//特定字符分割获取
+var getTextBySplit = function(str, char, index) {
+  return str.split(char)[index];
+}
+// 电话号码隐藏中间4位
+var hideMiddleNumber = function(str) {
+  var str = '' + str;
+  var str2 = str.substring(0, 3) + "****" + str.substring(7);
+  return str2;
+}
+// 动态费用列表
+var changeFeeList = function(arr, str) {
+  console.log(arr)
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].feeName == str) {
+      return arr[i].feeValue + '' + arr[i].feeAttrName
+    }
+  }
+}
+
+var substring = function(str, start, end) {
+  if (str) {
+    return str.substring(start, end)
+  } else {
+    return "";
+  }
+}
+// 销售日志平均售价计算
+var calculateAveragePrice = function(price, num) {
+  return ((price / num).toFixed(2))
+}
+
+module.exports = {
+  convertQiNiuImage: convertQiNiuImage,
+  convertAmount: convertAmount,
+  exceed: exceed,
+  convertQiNiuVideo: convertQiNiuVideo,
+  hideText: hideText,
+  isContains: isContains,
+  showNoTime: showNoTime,
+  clipWholeData: clipWholeData,
+  convertStrById: convertStrById,
+  convertPicStrToArr: convertPicStrToArr,
+  showTwoItems: showTwoItems,
+  articleSlice: articleSlice,
+  showTenCharacters: showTenCharacters,
+  convertStandardAmount: convertStandardAmount,
+  isThisImage: isThisImage,
+  convertAmountNull: convertAmountNull,
+  getTextBySplit: getTextBySplit,
+  hideMiddleNumber: hideMiddleNumber,
+  changeFeeList: changeFeeList,
+  convertSixAmountZero: convertSixAmountZero,
+  showFiveItems: showFiveItems,
+  substring: substring,
+  calculateAveragePrice: calculateAveragePrice
+};

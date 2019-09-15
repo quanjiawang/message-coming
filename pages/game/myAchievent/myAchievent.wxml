@@ -1,0 +1,30 @@
+<!--pages/game/myAchievent/myAchievent.wxml-->
+<!--pages/game/gameIndex/gameIndex.wxml-->
+<view class='topContainer '>
+  <view class='innerContainer'>
+    <view class='flex justify lineOne'>
+      <view class='notesTitle'>我的最高纪录</view>
+      <view class='gameBtn achievement' bindtap='goBack'>排行榜</view>
+    </view>
+    <view class='flex justify lineTwo'>
+      <view>
+        <text class='minitints'>45</text>分钟</view>
+      <view class='gameBtn startGame' bindtap='goStartGame'>开始游戏</view>
+    </view>
+  </view>
+</view>
+<view class='horizontal flex'>
+  <text class='horizineLine1'></text>
+  <text class='horizineLine'></text>
+  <text class='horizineLine1'></text>
+
+</view>
+<text class='horizineLineTwo'></text>
+
+<view class='listContainer'>
+  <view class='rankLine'>我的成就</view>
+  <view class='cardView'>
+    <view class='gameName'>iAOUDSJAWTHWERT</view>
+    <view class='gameContent'>LKDFJWSARGJERKHJNGQ'GRIEP'WQHNQHDRIQ]'JRGHEOPRHJERKOJWGEWERGJ</view>
+  </view>
+</view>

@@ -1,0 +1,73 @@
+/* pages/game/newRecord/newRecord.wxss */
+page{
+   background-color: #523981;
+}
+.mainContainer{
+  width: 90%;
+  /* height: 400rpx; */
+  height: 600rpx;
+  margin: 100rpx auto 0;
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+.share{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+   background-color: #FF9F5C;
+}
+.gameTime{
+  color: #5CD3A4;
+  font-size:36rpx;
+}
+.timeLine{
+  font-size: 26rpx;
+  margin-top: 20rpx;
+}
+.threeLine{
+  margin-top: 20rpx;
+}
+.line{
+  height: 2rpx;
+  width: 100%;
+  background-color: #E9E9E9;
+  margin-top: 70rpx;
+  
+}
+.gameTips{
+  font-size: 24rpx;
+  color: #B1B3B8;
+  margin-top: 22rpx;
+}
+.backBtn{
+  width: 86%;
+  height: 70rpx;
+  margin: 70rpx auto 0;
+  text-align: center;
+  line-height: 70rpx;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+letter-spacing:4rpx;
+
+}
+scroll-view{
+  height: 200rpx;
+}
+.srcollCon{
+  width: 200%;
+  height: 200rpx;
+  margin-top: 16rpx;
+  /* padding: 20rpx;
+  box-sizing: border-box; */
+}
+.moreGame{
+  width: 400rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+  border: 1px solid #E9E9E9;
+  display: inline-block;
+}

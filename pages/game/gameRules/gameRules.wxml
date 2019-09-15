@@ -1,0 +1,30 @@
+<!--pages/game/gameRules/gameRules.wxml-->
+<view class='topInfo'>
+<view>
+<view class='ruleTitle'>游戏规则:</view>
+<view class='ruleTips'>向右滑动,代表回复信息</view>
+<view class='ruleTips'>向左滑动,代表删除信息</view>
+<view class='ruleTips'>无操作:代表忽略信息</view>
+</view>
+<view class='rules'>
+<view class='ruleTitle'>失败条件:</view>
+<view class='ruleTips'>重要人物的信息没有及时回复或不慎删除</view>
+<view class='ruleTips'>不可描述的信息没有及时删除或予以回复</view>
+<view class='ruleTips'>通知类信息的回复或删除操作累计5次</view>
+</view>
+<view class='sexCon flex flex-pack-between'>
+<view class='{{sex==0?"isSelected":""}} sexCommon' bindtap='changeSex' data-sex="0">我是男孩</view>
+<view class='{{sex==1?"isSelected":""}} sexCommon' bindtap='changeSex' data-sex="1">我是女孩</view>
+</view>
+<view class='gameCon flex'>
+<view class='gameBtn back' bindtap='goBackIndex'>back</view>
+<view class='gameBtn start' bindtap='goStart'>start</view>
+</view>
+</view>
+<view class='horizontal flex'>
+<text class='horizineLine1'></text>
+<text class='horizineLine'></text>
+<text class='horizineLine1'></text>
+
+</view>
+<text class='horizineLineTwo'></text>

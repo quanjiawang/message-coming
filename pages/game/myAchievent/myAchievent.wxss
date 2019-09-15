@@ -1,0 +1,11 @@
+/* pages/game/myAchievent/myAchievent.wxss */
+@import'/pages/game/gameIndex/gameIndex';
+.gameName{
+  font-size: 28rpx;
+  color: #000;
+}
+.gameContent{
+  font-size: 24rpx;
+  word-break: break-all;
+  margin-top: 6RPX;
+}

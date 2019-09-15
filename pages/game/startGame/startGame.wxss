@@ -1,0 +1,24 @@
+/* pages/game/startGame/startGame.wxss */
+.game-page{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: #523981;
+}
+.textRight{
+  text-align: right;
+}
+.messageName{
+  font-size: 30rpx;
+}
+.arrivalTime{
+  font-size: 22rpx;
+}
+.messageCon{
+  font-size: 26rpx;
+}
+.cardView{
+  position: relative;
+}

@@ -1,0 +1,102 @@
+/* pages/game/gameIndex/gameIndex.wxss */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.topContainer{
+  width: 100%;
+  height: 260rpx;
+  background-color: #523A81;
+  color: #fff;
+}
+.lineOne{
+  font-size: 26rpx;
+
+/* margin-top: 60rpx; */
+}
+.justify{
+  justify-content: space-between;
+}
+.innerContainer{
+  padding: 60rpx 80rpx 0 80rpx;
+
+}
+/* .notesTitle{
+} */
+.achievement{
+background-color: #37CB90;
+}
+.gameBtn{
+    width: 170rpx;
+  height: 48rpx;
+  text-align: center;
+  border-radius: 6rpx;
+  line-height: 48rpx;
+  font-size: 28rpx;
+
+}
+.startGame{
+  background-color: #FFA05C;
+  margin-top: 20rpx;
+}
+.minitints{
+  font-size: 60rpx;
+}
+.listContainer{
+  background-color: #fff;
+  
+}
+.rankLine{
+  padding: 30rpx 30rpx 0 30rpx ;
+  font-size: 24rpx;
+}
+.textRight{
+  text-align: right;
+}
+.sculpture{
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 34rpx;
+  border:1px solid red;
+}
+.description{
+  font-size: 24rpx;
+  
+}
+.cardView{
+  color: #b2b2b2;
+}
+.horizineLine1{
+  width: 36rpx;
+  height: 36rpx;
+  display: inline-block;
+  background-color: #9788B3;
+}
+.horizineLine{
+  width: 590rpx;
+  height: 36rpx;
+  display: inline-block;
+  background-color: #8270A4;
+}
+.horizontal{
+  width: 90%;
+  /* height: 72rpx; */
+  /* margin: -4rpx auto 0; */
+  margin:0 auto;
+}
+.horizineLineTwo{
+  /* margin: -4rpx auto 0; */
+   width: 590rpx;
+  height: 36rpx;
+  display: flex;
+  background-color: #CBC4D9;
+  margin-left: 74rpx;
+}
+.lineTwo{
+  margin-top: 22rpx;
+}
